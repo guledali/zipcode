@@ -4,8 +4,6 @@ import ShowPlacePage from './ShowPlacePage'
 
 describe('ShowPlacePage', () => {
   it('renders successfully', () => {
-    expect(() => {
-      render(<ShowPlacePage />)
-    }).not.toThrow()
+    render(<ShowPlacePage />)
   })
 })

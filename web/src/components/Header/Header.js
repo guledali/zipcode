@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const Header = ({ name = '' }) => {
   const hasName = () => {
     return name && name.length > 1
@@ -26,6 +28,10 @@ const Header = ({ name = '' }) => {
       )}
     </div>
   )
+}
+
+Header.propTypes = {
+  name: PropTypes.string,
 }
 
 export default Header
