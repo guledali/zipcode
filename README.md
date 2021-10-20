@@ -8,7 +8,7 @@ Technology used in project was,
 - Jest & React-testing library
 - TailwindCSS for styling
 
-- Design like figma in sketching process
+- Design tool like figma for the initial sketching process
 
 Below is some screenshot over the design
 
