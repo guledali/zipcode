@@ -24,6 +24,20 @@ describe('ZipForm', () => {
     expect(onSubmit).not.toHaveBeenCalled()
   })
 
+  it('should show ExclamationCircleIcon if validation fails', async () => {
+    const onSubmit = jest.fn()
+
+    render(<ZipForm onSubmit={onSubmit} />)
+
+    const submitButton = screen.getByText('Find place!')
+
+    await waitFor(() => userEvent.click(submitButton))
+
+    const failIcon = screen.getByTestId('error-icon')
+
+    expect(failIcon).toBeInTheDocument()
+  })
+
   it('submits when required fields are entered', async () => {
     const zipCode = '12344'
 

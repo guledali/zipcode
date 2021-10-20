@@ -1,6 +1,6 @@
 import FindPlacePage from './FindPlacePage'
 
-export const generated = () => {
+export const FindPlace = () => {
   return <FindPlacePage />
 }
 

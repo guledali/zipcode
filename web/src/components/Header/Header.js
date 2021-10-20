@@ -10,7 +10,7 @@ const Header = ({ name = '' }) => {
   }
 
   return (
-    <div className="bg-blue-500 py-12">
+    <div className="bg-blue-900 py-12 drop-shadow-md">
       {hasName() && (
         <div>
           <h1 className="text-white text-center text-4xl font-medium">

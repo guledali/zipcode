@@ -5,6 +5,11 @@ import { ExclamationCircleIcon, SearchIcon } from '@heroicons/react/solid'
 
 const ZipForm = ({ onSubmit }) => {
   const formMethods = useForm()
+
+  const hasAnyZipCodeError = (formMethods) => {
+    return formMethods?.formState?.errors?.zipCode
+  }
+
   return (
     <Form onSubmit={onSubmit} formMethods={formMethods} className="relative">
       <Label name="zipCode">ZipCode</Label>
@@ -12,8 +17,6 @@ const ZipForm = ({ onSubmit }) => {
         placeholder="122 34"
         errorClassName="block border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md w-96 p-2.5"
         className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block  sm:text-sm border-gray-300 rounded-md w-96 p-2.5"
-        // transformValue={(str) => parseInt(str.replace(/,/g, ''), 10)}
-        transformValue="Int"
         name={'zipCode'}
         maxLength={'5'}
         minLength={'5'}
@@ -26,11 +29,12 @@ const ZipForm = ({ onSubmit }) => {
           },
         }}
       />
-      {formMethods.formState.errors.zipCode && (
+      {hasAnyZipCodeError(formMethods) && (
         <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none bottom-2">
           <ExclamationCircleIcon
             className="h-5 w-5 text-red-500"
             aria-hidden="true"
+            data-testid="error-icon"
           />
         </div>
       )}
