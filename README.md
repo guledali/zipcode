@@ -52,3 +52,8 @@ For starting the development server
 ```sh
 yarn redwood dev
 ```
+
+For running Storybook
+```sh
+yarn rw storybook
+```
