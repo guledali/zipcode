@@ -1,27 +1,54 @@
-# Redwood
+A coding challenge showing a place by zipCode
 
-> **NOTICE:** RedwoodJS is very close to a stable version 1.0. In the last two years,
-> the project has matured significantly and is already used in production by a number
-> of startups. We intend to have a 1.0 release candidate before the end of 2021 and
-> to release a truly production-ready 1.0 in early 2022.
+Technology used in project was,
 
-## Getting Started
-- [Tutorial](https://redwoodjs.com/tutorial/welcome-to-redwood): getting started and complete overview guide.
-- [Docs](https://redwoodjs.com/docs/introduction): using the Redwood Router, handling assets and files, list of command-line tools, and more.
-- [Redwood Community](https://community.redwoodjs.com): get help, share tips and tricks, and collaborate on everything about RedwoodJS.
+- React.js
+- GraphQL (frontend & backend)
+- Storyboard for building components in isolation
+- Jest & React-testing library
+- TailwindCSS for styling
 
-### Setup
+- Design like figma in sketching process
 
-We use Yarn as our package manager. To get the dependencies installed, just do this in the root directory:
+Below is some screenshot over the design
 
-```terminal
-yarn install
+![Screenshow 1](web/public/images/view-1.png)
+
+
+![Screenshow 2](web/public/images/view-2.png)
+
+![Screenshow 3](web/public/images/view-3.png)
+
+
+![Screenshow 4](web/public/images/view-4.png)
+
+
+The main piece of technology I use was **RedwoodJS** which provided a nice integration between backend and frontend, testing-utilities, form-builders and decent folder-structure.
+
+In order to run this application
+
+make sure you go to the .env file add these two enviroments
+
+```bash
+DATABASE_URL=file:./dev.db
+
+TEST_DATABASE_URL=file:./.redwood/test.db
 ```
 
-### Fire it up
+and then run
 
-```terminal
+```bash
+  yarn rw prisma migrate dev
+```
+
+Now you should be able run the tests and application
+
+for running the test
+```bash
+  yarn redwood test
+```
+
+For starting the development server
+```sh
 yarn redwood dev
 ```
-
-Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`.
